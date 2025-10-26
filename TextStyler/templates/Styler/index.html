@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Стилізатор правопису тексту</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'Styler/styles.css' %}">
+<script src="https://unpkg.com/htmx.org"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+
+<header>Стилізатор правопису тексту</header>
+
+<div class="chat-container">
+    <div id="chat-wrapper"></div>
+</div>
+
+<div id="input-wrapper">
+    <form method="post" hx-post="/translate/" hx-target="#chat-wrapper" hx-swap="beforeend" id="chat-form">
+        {% csrf_token %}
+        <input type="text" name="query" placeholder="Текст..." required>
+        <div class="form-row">
+            {{ form.dialect.label_tag }}
+            {{ form.dialect }}
+        </div>
+        
+        <button type="submit">Стилізувати</button>
+        <div class="loader-wrapper">
+            <span class="loader" style="display:none;"></span>
+        </div>
+    </form>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('#chat-form').on('submit', function() {
+        $('.loader').show();
+    });
+
+    $(document).on('htmx:afterRequest', function() {
+        $('.loader').hide();
+        // Scroll to bottom
+        const chat = document.getElementById("chat-wrapper");
+        chat.scrollTop = chat.scrollHeight;
+        // Clear input
+        $('#chat-form input[name="query"]').val('');
+    });
+});
+</script>
+
+</body>
+</html>
