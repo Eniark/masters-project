@@ -1,0 +1,284 @@
+#wrapper {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   min-height: 60%;
+   align-items: center;
+}
+
+
+header {
+   text-align: center;
+
+
+}
+
+
+h1 {
+   font-size: 50px;
+}
+
+
+textarea {
+   width: auto;
+   height: 50%;
+   padding: 12px 20px;
+   box-sizing: border-box;
+   font-size: 16px;
+   border: 2px solid #ccc;
+   border-radius: 4px;
+   background-color: #f8f8f8;
+   resize: vertical;
+   outline: none;
+   transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+textarea:focus {
+   border-color: #007BFF;
+   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+textarea::placeholder {
+   color: #888;
+   opacity: 1;
+}
+
+
+#translated-text {
+   background-color: #f8f8f8;
+   font-size: 20px;
+   padding: 12px 20px;
+   height: 50%;
+}
+
+
+form {
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   flex: 0.4;
+}
+
+
+#submit-wrapper {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+
+
+
+
+
+#form-wrapper {
+   margin-bottom: 5%;
+}
+
+
+.form-row {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-top: 0;
+}
+
+
+
+
+.form-row select, .form-row textarea {
+   flex: 0.8;
+}
+label {
+   font-size: 20px;
+}
+
+
+#translated-text-wrapper {
+   flex: 0.6;
+}
+
+
+#translated-text-wrapper #translated-text {
+   min-height: 230px;
+   width: 80%;
+}
+
+
+
+
+div[contenteditable="false"]:empty::before {
+   content: attr(data-placeholder);
+   color: #888;
+}
+
+
+
+
+.loader {
+   width: 48px;
+   height: 48px;
+   border: 5px solid #FFF;
+   border-bottom-color: transparent;
+   border-radius: 50%;
+   display: inline-block;
+   box-sizing: border-box;
+   animation: rotation 1s linear infinite;
+   margin-top: 30px;
+   }
+
+
+@keyframes rotation {
+   0% {
+       transform: rotate(0deg);
+   }
+   100% {
+       transform: rotate(360deg);
+   }
+}
+
+.chat-container {
+   flex: 1;
+   display: flex;
+   justify-content: center;
+}
+
+.chat-message {
+   display: flex;
+   flex-direction: column;
+   margin-bottom: 10px;
+}
+
+.user-message {
+   align-self: flex-end;
+   background-color: #cce5ff;
+   padding: 8px 12px;
+   border-radius: 15px;
+   max-width: 70%;
+   margin-bottom: 10px;
+}
+
+.bot-message {
+   align-self: flex-start;
+   background-color: #e2e3e5;
+   padding: 8px 12px;
+   border-radius: 15px;
+   max-width: 70%;
+}
+
+
+
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   background-color: #f7f7f8;
+}
+
+header {
+   background-color: #4a76a8;
+   color: white;
+   padding: 15px;
+   text-align: center;
+   font-size: 1.5em;
+}
+
+#chat-wrapper {
+   flex-direction: column;
+   overflow-y: auto;
+   gap: 10px;
+   width: 30%;
+
+
+   background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+   border-radius: 15px;
+   padding: 20px;
+   color: white;
+   box-shadow: 0 4px 30px rgba(0,0,0,0.1); /* soft shadow */
+   backdrop-filter: blur(10px); /* frosted glass effect */
+   -webkit-backdrop-filter: blur(10px); /* for Safari */
+   border: 1px solid rgba(255,255,255,0.3); /* optional border for glow */
+}
+
+.chat-message {
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+.user-message {
+   align-self: flex-end;
+   background-color: #0078d4;
+   color: white;
+   padding: 10px 15px;
+   border-radius: 20px 20px 0 20px;
+   word-wrap: break-word;
+}
+
+.bot-message {
+   align-self: flex-start;
+   background-color: #e4e6eb;
+   color: black;
+   padding: 10px 15px;
+   border-radius: 20px 20px 20px 0;
+   word-wrap: break-word;
+}
+
+#input-wrapper {
+   display: flex;
+   padding: 10px;
+   background-color: white;
+   border-top: 1px solid #ddd;
+}
+
+#input-wrapper input, #input-wrapper select {
+   flex: 1;
+   padding: 10px;
+   margin-right: 10px;
+   border-radius: 10px;
+   border: 1px solid #ccc;
+   font-size: 1em;
+}
+
+#input-wrapper button {
+   padding: 0 20px;
+   border: none;
+   background-color: #4a76a8;
+   color: white;
+   border-radius: 10px;
+   font-size: 1em;
+   cursor: pointer;
+}
+
+#input-wrapper button:disabled {
+   background-color: #999;
+   cursor: default;
+}
+
+
+.loader-wrapper {
+   position: absolute;
+   right: 50px; /* or wherever you want */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.loader {
+   border: 3px solid #f3f3f3;
+   border-top: 3px solid #4a76a8;
+   border-radius: 50%;
+   animation: spin 1s linear infinite;
+   margin-bottom: 25px;
+}
+
+@keyframes spin {
+   0% { transform: rotate(0deg); }
+   100% { transform: rotate(360deg); }
+}

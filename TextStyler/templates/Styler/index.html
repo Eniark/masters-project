@@ -42,10 +42,8 @@ $(document).ready(function() {
 
     $(document).on('htmx:afterRequest', function() {
         $('.loader').hide();
-        // Scroll to bottom
         const chat = document.getElementById("chat-wrapper");
         chat.scrollTop = chat.scrollHeight;
-        // Clear input
         $('#chat-form input[name="query"]').val('');
     });
 });
