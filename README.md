@@ -68,7 +68,7 @@ pip install -r requirements.txt
 # Моделі
 ```bash
 Завантажити весь каталог BARTmodels:
-[https://drive.google.com/drive/folders/1QqqIaWfJzm1shYTa_uKMyE5WuF2yJ-RH?usp=drive_link](https://drive.google.com/drive/folders/1KjPeblUqUuoYE2H2mysdfmiTv1bzu2v-?usp=sharing)
+https://drive.google.com/drive/folders/1KjPeblUqUuoYE2H2mysdfmiTv1bzu2v-?usp=sharing
 Помістити вміст в "masters-project/Styler/"
 ```
 
