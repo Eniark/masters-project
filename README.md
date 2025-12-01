@@ -8,8 +8,8 @@
 
 - **ПІБ**: Гуліватий Юрій Дмитрович
 - **Група**: ФЕІм-23
-- **Керівник**: Катеринчук Іван Миколайович, доцент
-- **Дата виконання**: [20.11.2025]
+- **Керівник**: Катеринчук Іван Миколайович, доцент кафедри оптоелектроніки та інформаційних технологій
+- **Дата виконання**: [26.11.2025]
 
 ---
 
@@ -43,10 +43,7 @@
 
 ### 1. Встановлення інструментів
 
-- Django
-- HTMX
-- HuggingFace
-- PyTorch
+- Python 3.9-3.12
 
 ### 2. Клонування репозиторію
 
@@ -54,15 +51,28 @@
 git clone https://github.com/Eniark/masters-project.git
 cd masters-project
 ```
+### 3. Створення та активація віртуального середовища
+```bash
+python -m venv projectVenv
+.\.venv\Scripts\activate
+```
 
-### 3. Встановлення залежностей
+
+### 4. Встановлення залежностей
 
 ```bash
 pip install -r requirements.txt
 ```
 
+### 5. Додавання моделей нейронних мереж
+# Моделі
+```bash
+Завантажити весь каталог BARTmodels:
+[https://drive.google.com/drive/folders/1QqqIaWfJzm1shYTa_uKMyE5WuF2yJ-RH?usp=drive_link](https://drive.google.com/drive/folders/1KjPeblUqUuoYE2H2mysdfmiTv1bzu2v-?usp=sharing)
+Помістити вміст в "masters-project/Styler/"
+```
 
-### 5. Запуск
+### 6. Запуск
 
 ```bash
 python manage.py runserver
